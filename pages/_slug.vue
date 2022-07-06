@@ -11,19 +11,17 @@
 
 <script>
 import client from '~/plugins/contentful';
-import Navbar from '~/components/navbar.vue';
 
 export default {
     asyncData({ params }) {
         return client.getEntries({
-            content_type: "post",
+            content_type: "devLog",
             "fields.slug": params.slug,
         })
             .then(entries => {
             return { post: entries.items[0] };
         })
             .catch(e => console.log(e));
-    },
-    components: { Navbar }
+    }
 }
 </script>
