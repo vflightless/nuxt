@@ -14,7 +14,7 @@
 
 <script>
 export default {
-    name: "IndexPage",
+    name: "Flightless",
     layout: 'home',
 }
 </script>
