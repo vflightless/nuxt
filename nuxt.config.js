@@ -44,5 +44,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   plugins: ['~/plugins/contentful',],
-  markdownit: { runtime: true,  }
+  
+  markdownit: { injected: true, breaks: true, }
+  
 }

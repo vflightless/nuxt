@@ -26,7 +26,6 @@
         methods: {
             fun: function navToggle() {
                 document.getElementById('navtoggle').classList.toggle("hidden");
-                console.log("shiiiiit");
             }
         }
     }

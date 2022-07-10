@@ -1,7 +1,7 @@
 <template>
   <section>
       <div class="max-w-2xl mx-auto px-5">
-        <div v-html="$md.render(post.fields.content)"></div>
+        <div id="md" v-html="$md.render(post.fields.content)"></div>
       </div>
   </section>
 </template>
