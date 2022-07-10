@@ -4,9 +4,9 @@
         <h1 class="text-5xl">Flightless</h1>
         <h6 class="text-2xl p-2">Flight at the speed of run...</h6>
         <div class="pt-3">
-          <NuxtLink class="mt-4 lg:mt-0 mr-4 hover:text-bold" to="/about">About</NuxtLink>
-          <NuxtLink class="mt-4 lg:mt-0 mr-4" to="/blog">Blog</NuxtLink>
-          <a class="mt-4 lg:mt-0 mr-4" href="https://2movie.flightless.io">Cytube</a>
+          <NuxtLink class="mt-4 lg:mt-0 mr-4 px-2 hover:text-bold" to="/about">About</NuxtLink>
+          <NuxtLink class="mt-4 lg:mt-0 mr-4 px-2" to="/blog">Blog</NuxtLink>
+          <a class="mt-4 lg:mt-0 mr-4 px-2" href="https://2movie.flightless.io">Cytube</a>
           <hr />
         </div>
       </div>
