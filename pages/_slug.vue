@@ -21,3 +21,8 @@ export default {
     }
 }
 </script>
+
+<style>
+  p { @apply pb-2; }
+  blockquote { @apply mx-auto; @apply p-2; @apply text-center;@apply italic; }
+</style>

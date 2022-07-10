@@ -1,7 +1,7 @@
 <template>
     <section>
         <Navbar />
-        <section class="max-w-2xl mx-auto px-10">
+        <section class="max-w-2xl mx-auto md:px-10">
             <Nuxt />
         </section>
     </section>
