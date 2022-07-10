@@ -1,6 +1,6 @@
 <template>
     <section>
-        <div class="max-w-xl mx-auto p-2 text-center">
+        <div class="mx-auto p-2 text-center">
             <H5>well well well...</H5>
             <hr />
             <div v-for="(post, index) in posts" :key="index">

@@ -1,6 +1,6 @@
 <template>
   <section>
-      <div class="max-w-2xl mx-auto px-5">
+      <div class="mx-auto px-5">
         <div id="md" v-html="$md.render(post.fields.content)"></div>
       </div>
   </section>
