@@ -6,7 +6,7 @@
         <div class="pt-3">
           <NuxtLink class="mt-4 lg:mt-0 mr-4 px-2 hover:text-bold" to="/about">About</NuxtLink>
           <NuxtLink class="mt-4 lg:mt-0 mr-4 px-2" to="/blog">Blog</NuxtLink>
-          <a class="mt-4 lg:mt-0 mr-4 px-2" href="https://2movie.flightless.io">Cytube</a>
+          <a class="mt-4 lg:mt-0 mr-4 px-2" href="https://2movie.flightless.io/r/MovieNight">Cytube</a>
           <hr />
         </div>
       </div>
