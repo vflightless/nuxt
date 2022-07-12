@@ -26,7 +26,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss','@nuxtjs/dotenv','@nuxtjs/markdownit'
+    '@nuxtjs/tailwindcss','@nuxtjs/dotenv','@nuxtjs/markdownit', '@nuxtjs/fontawesome'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -45,6 +45,17 @@ export default {
   build: {},
   plugins: ['~/plugins/contentful',],
   
-  markdownit: { injected: true, breaks: true, }
+  // Markdown-it
+  markdownit: { injected: true },
+  
+  // Font Awesome Icons
+  fontawesome: { 
+    component: 'fa',
+    icons: {
+      solid: true,
+      regular: true,
+      brands: true
+    }
+  },
   
 }
