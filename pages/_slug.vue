@@ -1,7 +1,7 @@
 <template>
   <section>
       <div class="mx-auto px-5">
-        <h2 class="text-xl">{{ post.fields.title }}</h2>
+        <h2>{{ post.fields.title }}</h2>
         <time v-html="(new Date(post.sys.createdAt)).toLocaleString('en-US', {dateStyle: 'medium', timeStyle: 'short'} )"></time>
         <hr />
         <div v-html="$md.render(post.fields.content)"></div>
@@ -13,12 +13,12 @@
 import client from '~/plugins/contentful';
 
 export default {
-    asyncData({ params }) {
-        console.log(params);
-        return client.getEntries({ content_type: "devLog", "fields.slug": params.slug, })
-            .then(entries => { return { post: entries.items[0] }; })
-            .catch(e => console.log(e));
-    }
+  asyncData({ params }) {
+      console.log(params);
+      return client.getEntries({ content_type: "devLog", "fields.slug": params.slug, })
+          .then(entries => { return { post: entries.items[0] }; })
+          .catch(e => console.log(e));
+  }
 }
 </script>
 

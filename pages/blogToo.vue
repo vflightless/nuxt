@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="mx-auto p-2 text-center">
-            <H5>well well well...</H5>
+            <h5>well well well...</h5>
             <hr />
             <div v-for="(post, index) in posts" :key="index">
                 <time v-html="(new Date(post.sys.createdAt)).toLocaleString('en-US', {dateStyle: 'medium', timeStyle: 'short'} )"></time> - <NuxtLink :to="'/blogToo/' + post.fields.slug">{{ post.fields.title }}</NuxtLink>
