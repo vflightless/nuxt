@@ -2,6 +2,7 @@ import { defineEventHandler } from 'h3';
 import fetch from 'node-fetch';
 
 export default defineEventHandler(async (event) => {
+  const runtimeConfig = useRuntimeConfig();
     const urlParts = event.node.req.url.split('?');
     const queryParams = urlParts[1];
     const slug = new URLSearchParams(queryParams).get('slug') || '';
@@ -20,10 +21,10 @@ export default defineEventHandler(async (event) => {
 
 
     try {
-        const response = await fetch(`https://graphql.contentful.com/content/v1/spaces/${process.env.SPACE_ID}/environments/master`, {
+        const response = await fetch(`https://graphql.contentful.com/content/v1/spaces/${runtimeConfig.spaceID}/environments/master`, {
             method: "POST",
             headers: {
-                Authorization: `Bearer ${process.env.API_KEY}`,
+                Authorization: `Bearer ${runtimeConfig.graphToken}`,
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({

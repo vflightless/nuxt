@@ -9,8 +9,8 @@ export default defineNuxtConfig({
   ],
 
   runtimeConfig: {
-    spaceID: process.env.cms_space,
-    graphToken: process.env.cms_preview,
+    spaceID: process.env.SPACE_ID,
+    graphToken: process.env.API_KEY,
   },
 
   devtools: {
