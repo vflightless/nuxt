@@ -1,44 +1,22 @@
-export default defineEventHandler(async () => {
-  const config = useRuntimeConfig()
+// server/api/blog.ts
+import { fetchBlogPosts } from '~/server/utils/fetchBlogPosts'
 
-  const res = await fetch(
-    `https://graphql.contentful.com/content/v1/spaces/${config.contentful.spaceId}/environments/master`,
-    {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${config.contentful.token}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query: `
-          query {
-            blogCollection(limit: 5) {
-              items {
-                title
-                slug
-                sys {
-                  firstPublishedAt
-                }
-              }
-            }
-          }
-        `,
-      }),
-    }
-  )
+export default defineEventHandler(async (event) => {
+  const query = getQuery(event)
 
-  const json = await res.json()
+  const limit = parseInt(query.limit as string) || 5
+  const page = parseInt(query.page as string) || 1
+  const order = (query.order as string)?.toUpperCase() === 'ASC' ? 'ASC' : 'DESC'
 
-  //console.log('Contentful response:', JSON.stringify(json, null, 2))
+  const skip = (page - 1) * limit
 
-  if (!res.ok || json.errors) {
-    console.error('GraphQL error:', json.errors)
-    throw createError({
-      statusCode: 500,
-      statusMessage: 'Failed to fetch from Contentful',
-      data: json.errors
-    })
+  const data = await fetchBlogPosts(limit, skip, order)
+
+  return {
+    items: data.blogCollection.items,
+    total: data.blogCollection.total,
+    page,
+    limit,
+    order,
   }
-
-  return json.data
 })
