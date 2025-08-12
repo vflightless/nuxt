@@ -1,6 +1,6 @@
-// server/utils/contentful.ts
+// /server/utils/contentful.ts
 export async function contentfulQuery(query: string, variables: Record<string, any> = {}) {
-  const config = useRuntimeConfig()
+  const config = useRuntimeConfig() // Access runtime config
 
   const res = await fetch(`https://graphql.contentful.com/content/v1/spaces/${config.contentful.spaceId}/environments/master`, {
     method: 'POST',

@@ -3,9 +3,3 @@
         <NuxtPage />
     </section>
 </template>
-
-<script setup>
-useHead({
-  title: "Flightless"
-})
-</script>
